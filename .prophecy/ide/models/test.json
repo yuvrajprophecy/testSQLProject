@@ -1,0 +1,83 @@
+{
+  "id" : "test",
+  "metainfo" : {
+    "label" : "test",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "test##gX98cEYm" : {
+      "id" : "test##gX98cEYm",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "test",
+        "x" : 20,
+        "y" : 20,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM qa_test_seed_job_Databricks\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "QLLpIr9J",
+          "slug" : "qa_test_seed_job_Databricks"
+        } ],
+        "outputs" : [ {
+          "id" : "h65SNefc",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "LeFeY3j2dSy_z0_gl1HbF" : {
+      "id" : "LeFeY3j2dSy_z0_gl1HbF",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "qa_test_seed_job_Databricks",
+        "slug" : "qa_test_seed_job_Databricks",
+        "x" : -280,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "qa_test_seed_job_Databricks",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "2r4FPyW-UEcRmR446X6_Z",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "g-y5OJC6z2pUbl8EG8JeU",
+    "source" : "LeFeY3j2dSy_z0_gl1HbF",
+    "sourcePort" : "2r4FPyW-UEcRmR446X6_Z",
+    "target" : "test##gX98cEYm",
+    "targetPort" : "QLLpIr9J"
+  } ],
+  "component" : "Model"
+}
